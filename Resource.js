@@ -1,9 +1,19 @@
 import Model from './Model.js'
 
 export default class Resource extends Model {
+    
+    constructor() {
+        super()
+
+        this.update({
+            loading: false,
+            data: null, 
+            error: null
+        })
+    }
 
     startLoading() {
-        this.update({loading: true, data: null, errors: null})
+        this.update({loading: true})
     }
 
     isLoading() {
@@ -11,15 +21,16 @@ export default class Resource extends Model {
     }
 
     stopLoading(data) {
-        this.update({loading: false, data: data})
+        this.update({loading: false, data})
+    }
+
+    handleError(error) {
+        this.set('error', error);
+        this.set('loading', false);
     }
 
     getData() {
         return this.get('data');
-    }
-
-    handleError(error) {
-        return this.set('error', error);
     }
 
     getError() {
