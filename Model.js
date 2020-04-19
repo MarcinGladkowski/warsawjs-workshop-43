@@ -1,5 +1,7 @@
 export default class Model {
 
+    constructor
+
     set(key, value) {
         this[key] = value;
         return this;
@@ -14,12 +16,7 @@ export default class Model {
     }
     
     update(obj) {
-        const keys = Object.keys(obj);
-        const values = Object.values(obj);
-
-        for(let i = 0; i < keys.length; i++) {
-            this[keys[i]] = values[i]
-        }
+        Object.entries(obj).array.forEach(([key, value]) => this.set(key, value));
     }
 
     has(key) {
