@@ -1,18 +1,15 @@
 export default class Model {
 
-    constructor(value) {
-        this.value = value
-    }
     
-    set(value) {
-        this.value = value;
+    set(key, value) {
+        this[key] = value;
     }
-    get() {
-        return this.value;
+    get(key) {
+        return this[key];
     }
 
-    has() {
-        return (this.value !== undefined)
+    has(key) {
+        return (this[key] !== undefined)
     }
 
 }
