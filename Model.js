@@ -5,6 +5,11 @@ export default class Model {
         return this;
     }
     get(key) {
+
+        if (!this.has(key)) {
+            throw new Error(`No field in model for key: ${key}`)
+        }
+
         return this[key];
     }
 
