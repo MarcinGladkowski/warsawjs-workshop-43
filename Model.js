@@ -1,4 +1,8 @@
 export default class Model {
+
+    constructor(value) {
+        this.value = value
+    }
     
     set(value) {
         this.value = value;
@@ -6,5 +10,9 @@ export default class Model {
     get() {
         return this.value;
     }
-    
+
+    has() {
+        return (this.value !== undefined)
+    }
+
 }
