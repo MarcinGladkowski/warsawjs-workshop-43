@@ -3,6 +3,8 @@ import Resource from "./Resource.js";
 export default function ResourceFactory() {
 
     let loading = false;
+    let data = null;
+    let error = null;
 
     return {
         startLoading() {
@@ -10,6 +12,18 @@ export default function ResourceFactory() {
         },
         isLoading() {
             return loading;
+        },
+        stopLoading(newData) {
+            data = newData
+        },
+        getData() {
+            return data;
+        },
+        handleError(newError) {
+            error = newError;
+        },
+        getError() {
+            return error;
         }
     }
 
