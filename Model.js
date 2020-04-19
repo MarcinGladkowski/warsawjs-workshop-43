@@ -14,7 +14,7 @@ export default class Model {
     }
     
     update(obj) {
-        Object.entries(obj).array.forEach(([key, value]) => this.set(key, value));
+        Object.entries(obj).forEach(([key, value]) => this.set(key, value));
     }
 
     has(key) {
