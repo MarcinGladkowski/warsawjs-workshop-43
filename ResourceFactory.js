@@ -1,5 +1,3 @@
-import Resource from "./Resource.js";
-
 export default function ResourceFactory() {
 
     let loading = false;
