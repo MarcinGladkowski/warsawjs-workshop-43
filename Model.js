@@ -1,7 +1,5 @@
 export default class Model {
 
-    constructor
-
     set(key, value) {
         this[key] = value;
         return this;
